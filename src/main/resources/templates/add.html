@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymLeaf.com">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Hello, world!</title>
+  </head>
+  <body>
+  <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <!-- Brand -->
+  <a class="navbar-brand" href="#">User</a>
+
+  <!-- Toggler/collapsibe Button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Navbar links -->
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/t}">user</a>
+      </li>
+    
+    </ul>
+  </div>
+</nav>
+
+  <br> <br>
+  <div class="container">
+  <div class="row">
+  <div class="col-lg-6 col-md-6 col-sm-6 container justify-content center card">
+ <h1 class="text-center">create new user</h1>
+ <div class="card-body">
+ <form th:action="@{/save}" th:object="${user}" method="POST">
+ 	<div class="form-group">
+ <label>User name</label>
+ <input type="text" name="name" th:feild = "name" class="form-control" placeholder="enter user name">
+  </div>
+   <div class="form-group">
+    <label>User id</label>
+ <input type="text" name="id" th:feild = "id" class="form-control" placeholder="enter user id">
+ </div>
+ <div class="box-footer">
+ <button type="submit" class="btn btn-primary"> submit</button>
+ </div>
+ </form>
+ </div>
+ </div>
+  </div>
+  </div>  
+  </body>
+</html>
